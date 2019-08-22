@@ -1,0 +1,499 @@
+//15/11/2018 
+==================insert one agency into agencies table===============================
+insert  into `agencies`(`id`,`name`,`number`,`company_name`,`company_address`,`company_phone`,`contact_person`,`email`,`contact_person_mobile`,`certificate`,`password`,`created_date`) values (15,'etete','12352','etete','etetetetet','235231','etet','et@et.com','3252','uploads/agency/download.jpg','4de1b7a4dc53e4a84c25ffb7cdb580ee','2018-11-12 19:13:24');
+==================update countries in countries table=================================
+insert  into `countries`(`id`,`country`) values 
+(1,'Russia'),
+(2,'Singapore'),
+(15,'Spain'),
+(16,'Brazil'),
+(17,'Ecuador'),
+(18,'Angola'),
+(19,'Bulgaria'),
+(20,'Argentina'),
+(21,'Belgium'),
+(22,'Chile'),
+(24,'Iran, Islamic Republic Of'),
+(25,'United Arab Emirates'),
+(26,'Japan'),
+(27,'Hong Kong'),
+(28,'Russian Federation'),
+(29,'Thailand'),
+(30,'Bangladesh'),
+(31,'United State'),
+(32,'New Zealand'),
+(33,'Venezuela'),
+(34,'Senegal');
+=================================create guide_reviews table=======================
+DROP TABLE IF EXISTS `guide_reviews`;
+
+CREATE TABLE `guide_reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `guide` int(11) NOT NULL,
+  `agency` int(11) NOT NULL,
+  `review` varchar(256) NOT NULL,
+  `rating` float NOT NULL,
+  `status` varchar(64) DEFAULT NULL,
+  `submission_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+==============================insert guide into guides table==========================
+insert  into `guides`(`id`,`name`,`sirname`,`certificate_number`,`region`,`languages`,`address`,`phone_number`,`email`,`password`,`photo`,`certificate_front_picture`,`certificate_back_picture`,`created_date`) values (33,'afaf','afaf','1231241','asdfafasf','[\"1\",\"2\"]','afasdfasdf','123123','af@af.com','35abef9cacf725f2eb638651f4c90b2e','uploads/guide/photo/download.jpg','uploads/guide/certificate_front/download (3).jpg','uploads/guide/certificate_back/download (3).png','2018-11-12 17:05:07');
+
+
+/*Data for the table `guide_reviews` */
+
+insert  into `guide_reviews`(`id`,`guide`,`agency`,`review`,`rating`,`status`,`submission_date`) values 
+(1,12,12,'asdfasdfasdf',3.8,'active','2018-11-15 05:58:26'),
+(2,15,2,'asdfasdfasdfasdf',3.6,NULL,'2018-11-15 06:24:35'),
+(3,16,9,'bbbbbbbbbbbbbbb',5,'active','2018-11-15 06:25:15'),
+(4,12,15,'eettttttttttttttttttttttttttttttttttteeeeeeeeee',4.6,NULL,'2018-11-15 06:25:56'),
+(5,16,2,'eettttttttttttttttttttttttttttttttttteeeeeeeeeeggggggggggggggggg',0.5,'active','2018-11-15 06:27:54'),
+(6,12,2,'gggggggggggggttttttttttttttttttaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',0.7,'active','2018-11-15 06:28:26');
+================================inserted 2 user into users table======================
+insert  into `users`(`id`,`email`,`password`,`role`,`created_date`) values (62,'af@af.com','35abef9cacf725f2eb638651f4c90b2e',2,'2018-11-12 17:05:07'),
+(70,'et@et.com','4de1b7a4dc53e4a84c25ffb7cdb580ee',1,'2018-11-12 19:13:24');
+==================================create agency_reviews table===============================
+DROP TABLE IF EXISTS `agency_reviews`;
+
+CREATE TABLE `agency_reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `agency` int(11) NOT NULL,
+  `guide` int(11) NOT NULL,
+  `review` varbinary(512) DEFAULT NULL,
+  `rating` float DEFAULT NULL,
+  `status` varchar(64) DEFAULT NULL,
+  `submission_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `agency_reviews` */
+
+insert  into `agency_reviews`(`id`,`agency`,`guide`,`review`,`rating`,`status`,`submission_date`) values 
+(1,9,19,'rrrrrrrrrrrrrrrrrrxxxxxxxxxxxxxxxxxfffffff',4.5,'','2018-11-15 12:23:42'),
+(3,15,16,'eteteteteteteteggggggggggggggggg',2.8,'active','2018-11-15 12:25:28'),
+(4,2,18,'zzzzzzzzzzzzzzzzzzwwwqqqqqqqqqttttttt',2.5,'active','2018-11-15 12:26:21');
+==========================restaurant categories table======================
+DROP TABLE IF EXISTS `restaurant_categories`;
+
+CREATE TABLE `restaurant_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+/*Data for the table `restaurant_categories` */
+
+insert  into `restaurant_categories`(`id`,`category`) values 
+(1,'Noodle'),
+(2,'Meat'),
+(3,'Fish'),
+(4,'Hamburger'),
+(5,'Salad'),
+(6,'Sandwich'),
+(7,'Tea'),
+(8,'Coffee'),
+(9,'Italian foods'),
+(10,'Cafe'),
+(11,'Vegetables'),
+(12,'Hotdog');
+=======================create restaurants table===========================
+DROP TABLE IF EXISTS `restaurants`;
+
+CREATE TABLE `restaurants` (
+  `id` int(64) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) DEFAULT NULL,
+  `category` varchar(64) DEFAULT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `rating` float DEFAULT NULL,
+  `legal_name` varchar(64) DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  `contact_email` varchar(64) DEFAULT NULL,
+  `logo` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `restaurants` */
+
+insert  into `restaurants`(`id`,`name`,`category`,`description`,`rating`,`legal_name`,`address`,`city`,`country`,`number`,`web`,`email`,`contact_person`,`contact_number`,`contact_email`,`logo`) values 
+(1,'res1','[\"Noodle\",\"Hamburger\",\"Salad\"]','asdfasdfasdfasdfasdf',5,'res1','asdfasdf','sdfs','Spain','3523522','sadfasdf','res@res.com','asdfasdfasd','235236523','asd@asd.com','uploads/restaurant/images (5).png');
+
+
+
+//16/11/2018
+================================creat shop_categories table=====================
+DROP TABLE IF EXISTS `shop_categories`;
+
+CREATE TABLE `shop_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+/*Data for the table `shop_categories` */
+
+insert  into `shop_categories`(`id`,`category`) values 
+(1,'Leather'),
+(3,'Bags'),
+(4,'Carpets'),
+(5,'Furnitures'),
+(6,'Handcraft'),
+(7,'Clothes'),
+(8,'Sports'),
+(9,'Fruits'),
+(10,'Vegetables'),
+(11,'Toys'),
+(12,'Drinks'),
+(13,'Dish');
+============================create shops table===========================
+
+DROP TABLE IF EXISTS `shops`;
+
+CREATE TABLE `shops` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `category` varchar(64) DEFAULT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `rating` float DEFAULT NULL,
+  `legal_name` varchar(64) DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  `contact_email` varchar(64) DEFAULT NULL,
+  `logo` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+/*Data for the table `shops` */
+
+insert  into `shops`(`id`,`name`,`category`,`description`,`rating`,`legal_name`,`address`,`city`,`country`,`number`,`web`,`email`,`contact_person`,`contact_number`,`contact_email`,`logo`) values 
+(9,'dddddd','[\"Clothes\"]','ddddddddddddd',5,'ddddddd','ddddddd','d','Brazil','2342342','ddddddddddd','dd@dd.com','ddddd','1235235','ddd@ddd.com','uploads/shop/download (3).png'),
+(10,'aaaaaaaa','[\"Leather\"]','aaaaaaaaaaaaaaaaa',5,'aaaaa','aaaaaaaaaa','sdfs','Brazil','1111111','aaaaaa','aa@aa.com','aaaaaa','11111111','aaa@aaa.com','uploads/shop/download (3).jpg'),
+(11,'sssssssssss','[\"Bags\",\"Clothes\",\"Sports\",\"Drinks\"]','ssssssssssss',5,'ssssssss','ssssssssbbbbbbb','sdtwet','Spain','444444','sssss','ss@ss.com','bbssssssssbbbbbbbbbb','11111111','sss@sss.com','uploads/shop/download (2).png');
+
+======================================create museums table====================
+
+DROP TABLE IF EXISTS `museums`;
+
+CREATE TABLE `museums` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `summer_start_time` time DEFAULT NULL,
+  `summer_end_time` time DEFAULT NULL,
+  `winter_start_time` time DEFAULT NULL,
+  `winter_end_time` time DEFAULT NULL,
+  `summer_open_days` varchar(64) DEFAULT NULL,
+  `winter_open_days` varchar(64) DEFAULT NULL,
+  `entrance_price` float DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `museums` */
+
+insert  into `museums`(`id`,`name`,`description`,`summer_start_time`,`summer_end_time`,`winter_start_time`,`winter_end_time`,`summer_open_days`,`winter_open_days`,`entrance_price`,`address`,`city`,`country`,`web`,`email`,`number`,`contact_person`,`contact_number`) values 
+(1,'mus','asdfasdfasdfasdfasdfasdfasdfasdf','14:22:00','17:55:00','11:11:00','16:44:00','active','active',111.5,'asdfasdf','s','Singapore','asdfasdfasdfasdf','ms@ms.com','235563','adfasdfasdf','235234234'),
+(2,'egeg','asewetaasdgasdfasdf','14:22:00','15:33:00','11:11:00','19:07:00','active',NULL,235.3,'asdfasdf','sdtwet','Bulgaria','sdqasdfasdf','eg@eg.com','35234234','asdtgqetqwet','235');
+
+================================================update museums table and inserted new data=================================
+DROP TABLE IF EXISTS `museums`;
+
+CREATE TABLE `museums` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `summer_start_time` time DEFAULT NULL,
+  `summer_end_time` time DEFAULT NULL,
+  `winter_start_time` time DEFAULT NULL,
+  `winter_end_time` time DEFAULT NULL,
+  `summer_open_days` varchar(128) DEFAULT NULL,
+  `winter_open_days` varchar(128) DEFAULT NULL,
+  `entrance_price` float DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `museums` */
+
+insert  into `museums`(`id`,`name`,`description`,`summer_start_time`,`summer_end_time`,`winter_start_time`,`winter_end_time`,`summer_open_days`,`winter_open_days`,`entrance_price`,`address`,`city`,`country`,`web`,`email`,`number`,`contact_person`,`contact_number`) values 
+(3,'ms1','this is first museum','11:11:00','14:22:00','15:33:00','16:44:00','[\"Monday\",\"Wednesday\",\"Friday\"]','[\"Tuesday\",\"Friday\",\"Saturday\",\"Sunday\"]',235.2,'address','sdtwet','Ecuador','web','mm@mm.com','213523','person','23523'),
+(4,'ms3','this is third museum','11:11:00','14:22:00','15:33:00','16:44:00','[\"Monday\",\"Thursday\",\"Friday\",\"Sunday\"]','[\"Monday\",\"Wednesday\",\"Friday\",\"Saturday\"]',35.23,'address','sdrs','Russia','web','mt@mt.com','235','person2','35234234');
+
+/*Table structure for table `restaurant_categories` */
+==================================create announcements table and inserted data===============================
+
+DROP TABLE IF EXISTS `announcements`;
+
+CREATE TABLE `announcements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(64) NOT NULL,
+  `subject` varchar(64) NOT NULL,
+  `description` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `announcements` */
+
+insert  into `announcements`(`id`,`category`,`subject`,`description`) values 
+(1,'[\"subject1\",\"subject6\",\"subject3\"]','subject2','<h1 style=\"text-align: center;\"><em><span style=\"text-decoration: underline;\"><span style=\"text-decoration: line-through;\">This is subject2</span></span></em></h1>'),
+(2,'[\"subject4\",\"subject5\"]','subject1','<p style=\"text-align: right;\"><span style=\"text-decoration: underline;\"><em>This is description of subject1</em></span></p>');
+
+/=====================================17/11/2018===============================
+=======================create departments table and inserted some data============
+DROP TABLE IF EXISTS `departments`;
+
+CREATE TABLE `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+/*Data for the table `departments` */
+
+insert  into `departments`(`id`,`department`) values 
+(1,'department1'),
+(2,'department2'),
+(3,'department3'),
+(4,'department4'),
+(5,'department6');
+======================create editors table and inserted some data======================
+
+DROP TABLE IF EXISTS `editors`;
+
+CREATE TABLE `editors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `sirname` varchar(64) NOT NULL,
+  `supervisor` varchar(64) DEFAULT NULL,
+  `department` varchar(512) DEFAULT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `certificate` varchar(64) DEFAULT NULL,
+  `password` varchar(64) NOT NULL,
+  `created_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `editors` */
+
+insert  into `editors`(`id`,`name`,`sirname`,`supervisor`,`department`,`number`,`email`,`certificate`,`password`,`created_date`) values 
+(1,'editor','user1','super visor3','[\"department2\"]','262342342','editor1@gmail.com','uploads/editor/images (11).jpg','c9330587565205a5b8345f60c620ecc6','2018-11-17 10:49:25'),
+(2,'editor','user2','super visor4','[\"department2\",\"department4\"]','235','editor2@gmail.com','uploads/editor/little Peterpan.jpg','d41d8cd98f00b204e9800998ecf8427e','2018-11-17 10:58:04');
+=====================create subject categories table and insert some data=============
+
+DROP TABLE IF EXISTS `subject_categories`;
+
+CREATE TABLE `subject_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+/*Data for the table `subject_categories` */
+
+insert  into `subject_categories`(`id`,`category`) values 
+(1,'subject1'),
+(2,'subject6'),
+(3,'subject3'),
+(4,'subject4'),
+(5,'subject5');
+=========================create supervisors table and insert some data===============
+
+DROP TABLE IF EXISTS `supervisors`;
+
+CREATE TABLE `supervisors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `sirname` varchar(64) NOT NULL,
+  `department` varchar(512) DEFAULT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `certificate` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `created_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+/*Data for the table `supervisors` */
+
+insert  into `supervisors`(`id`,`name`,`sirname`,`department`,`number`,`certificate`,`email`,`password`,`created_date`) values 
+(3,'super','visor3','[\"department3\",\"department6\"]','235235','uploads/supervisor/images (3).jpg','super3@gmail.com','85511dc944c3765338deb0b3ad38e907','2018-11-17 06:30:46'),
+(4,'super','visor4','[\"department6\"]','35231','uploads/supervisor/images (5).jpg','super4@gmail.com','d41d8cd98f00b204e9800998ecf8427e','2018-11-17 06:58:25'),
+(5,'super','visor5','[\"department1\"]','62341','uploads/supervisor/images (13).jpg','super5@gmail.com','f2d47c40507a9161af34a94afd6a3e5b','2018-11-17 06:59:10'),
+(6,'super','visor2','','62342','uploads/supervisor/images (12).jpg','super2@gmail.com','94efeff594eba1241014e55bd8c5c283','2018-11-17 07:01:24');
+===========================insert some users into users table====================
+insert  into `users`(`id`,`email`,`password`,`role`,`created_date`) values 
+(1,'admin@admin.com','21232f297a57a5a743894a0e4a801fc3',0,'2018-11-07 02:40:00'),
+(22,'a@a.com','d41d8cd98f00b204e9800998ecf8427e',4,'2018-11-15 17:59:12'),
+(23,'b@b.com','08f8e0260c64418510cefb2b06eee5cd',4,'2018-11-08 14:20:22'),
+(25,'qt@qt.com','e85823b4e7db1064f4301e1c74978199',3,'2018-11-12 18:46:31'),
+(26,'d@d.com','77963b7a931377ad4ab5ad6a9cd718aa',4,'2018-11-08 15:49:38'),
+(27,'w@w.com','4eae35f1b35977a00ebd8086c259d4c9',3,'2018-11-08 16:09:05'),
+(38,'f@f.com','343d9040a671c45832ee5381860e2996',4,'2018-11-09 11:34:18'),
+(44,'r@r.com','44f437ced647ec3f40fa0841041871cd',3,'2018-11-09 12:31:12'),
+(45,'g@g.com','ba248c985ace94863880921d8900c53f',4,'2018-11-09 14:26:12'),
+(46,'h@h.com','a3aca2964e72000eea4c56cb341002a4',4,'2018-11-09 14:34:11'),
+(47,'z@z.com','f3abb86bd34cf4d52698f14c0da1dc60',4,'2018-11-09 14:43:26'),
+(48,'x@x.com','f561aaf6ef0bf14d4208bb46a4ccb3ad',4,'2018-11-09 14:49:27'),
+(49,'v@v.com','4786f3282f04de5b5c7317c490c6d922',4,'2018-11-09 14:52:29'),
+(61,'abcd@abcd.com','d41d8cd98f00b204e9800998ecf8427e',4,'2018-11-12 16:35:40'),
+(62,'af@af.com','35abef9cacf725f2eb638651f4c90b2e',4,'2018-11-12 17:05:07'),
+(70,'et@et.com','4de1b7a4dc53e4a84c25ffb7cdb580ee',3,'2018-11-12 19:13:24'),
+(74,'super3@gmail.com','85511dc944c3765338deb0b3ad38e907',1,'2018-11-17 06:30:46'),
+(75,'super4@gmail.com','d41d8cd98f00b204e9800998ecf8427e',1,'2018-11-17 06:58:25'),
+(76,'super5@gmail.com','f2d47c40507a9161af34a94afd6a3e5b',1,'2018-11-17 06:59:10'),
+(77,'super2@gmail.com','94efeff594eba1241014e55bd8c5c283',1,'2018-11-17 07:01:24'),
+(78,'editor1@gmail.com','c9330587565205a5b8345f60c620ecc6',1,'2018-11-17 10:49:25'),
+(79,'editor2@gmail.com','d41d8cd98f00b204e9800998ecf8427e',2,'2018-11-17 10:58:04');
+====================================18/11/2018==========================================
+===========================insert new field "status" into "museums" table===============
+DROP TABLE IF EXISTS `museums`;
+
+CREATE TABLE `museums` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `summer_start_time` time DEFAULT NULL,
+  `summer_end_time` time DEFAULT NULL,
+  `winter_start_time` time DEFAULT NULL,
+  `winter_end_time` time DEFAULT NULL,
+  `summer_open_days` varchar(128) DEFAULT NULL,
+  `winter_open_days` varchar(128) DEFAULT NULL,
+  `entrance_price` float DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  `status` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+==============================update "museums" table========================
+insert  into `museums`(`id`,`name`,`description`,`summer_start_time`,`summer_end_time`,`winter_start_time`,`winter_end_time`,`summer_open_days`,`winter_open_days`,`entrance_price`,`address`,`city`,`country`,`web`,`email`,`number`,`contact_person`,`contact_number`,`status`) values 
+(3,'ms1','this is first museum','11:11:00','14:22:00','15:33:00','16:44:00','[\"Monday\",\"Wednesday\",\"Friday\"]','[\"Tuesday\",\"Friday\",\"Saturday\",\"Sunday\"]',235.2,'address','sdtwet','Ecuador','web','mm@mm.com','213523','person','23523','deactive'),
+(4,'ms3','this is third museum','11:11:00','14:22:00','15:33:00','16:44:00','[\"Monday\",\"Thursday\",\"Friday\",\"Sunday\"]','[\"Monday\",\"Wednesday\",\"Friday\",\"Saturday\"]',35.23,'address','sdrs','Russia','web','mt@mt.com','235','person2','35234234','active');
+================insert "status" and "provider_email" fields into "restaurants" table and update table data===================================================
+DROP TABLE IF EXISTS `restaurants`;
+
+CREATE TABLE `restaurants` (
+  `id` int(64) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) DEFAULT NULL,
+  `category` varchar(64) DEFAULT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `rating` float DEFAULT NULL,
+  `legal_name` varchar(64) DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  `contact_email` varchar(64) DEFAULT NULL,
+  `logo` varchar(64) DEFAULT NULL,
+  `status` varchar(64) NOT NULL,
+  `provider_email` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `restaurants` */
+
+insert  into `restaurants`(`id`,`name`,`category`,`description`,`rating`,`legal_name`,`address`,`city`,`country`,`number`,`web`,`email`,`contact_person`,`contact_number`,`contact_email`,`logo`,`status`,`provider_email`) values 
+(1,'res1','[\"Noodle\",\"Hamburger\",\"Salad\"]','asdfasdfasdfasdfasdf',4,'res1','asdfasdf','sdfs','Spain','3523522','sadfasdf','res@res.com','asdfasdfasd','235236523','asd@asd.com','uploads/restaurant/images (5).png','active','admin@admin.com'),
+(2,'ressuggestion2','[\"Fish\",\"Sandwich\",\"Tea\"]','asdfasdfasdfasdfasdf',4,'etw23sdfasdf','address','sdfs','Bulgaria','23235234','asdfasdfasdfasdf','ressugg1@gmail.com','asdf','23352','ressuggperson2@gmail.com','uploads/restaurant/5bb9d4a8a3278ava-600x600.jpg','active','et@et.com'),
+(3,'ressuggestion1','[\"Meat\"]','asdfasdfasdfasdf',5,'werwer','agasdrq','ruyartua','United Arab Emirates','234234','asdfasdt','ressugg2@gmail.com','asdtasdf','2352341','ressuggperson2@gmail.com','uploads/restaurant/Leon-recortado.jpg','active','et@et.com'),
+(4,'ressuggestion3','[\"Fish\"]','asdfasdfasdfasdfasdfasdf',5,'asdfasdfasdf','qwerqwea','sdtwet','Russian Federation','235324','werasdfasd','ressugg3@gmail.com','asdfasdf','235234','ressuggperson3@gmail.com','uploads/restaurant/lion-drawing-wallpaper-60.jpg','active','x@x.com');
+=============insert "status" and "provider_email" fields into "shops" table and update table data ====================================================================
+DROP TABLE IF EXISTS `shops`;
+
+CREATE TABLE `shops` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `category` varchar(64) DEFAULT NULL,
+  `description` varchar(512) DEFAULT NULL,
+  `rating` float DEFAULT NULL,
+  `legal_name` varchar(64) DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
+  `city` varchar(64) DEFAULT NULL,
+  `country` varchar(64) DEFAULT NULL,
+  `number` varchar(64) DEFAULT NULL,
+  `web` varchar(64) DEFAULT NULL,
+  `email` varchar(64) NOT NULL,
+  `contact_person` varchar(64) DEFAULT NULL,
+  `contact_number` varchar(64) DEFAULT NULL,
+  `contact_email` varchar(64) DEFAULT NULL,
+  `logo` varchar(64) DEFAULT NULL,
+  `status` varchar(64) NOT NULL,
+  `provider_email` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+/*Data for the table `shops` */
+
+insert  into `shops`(`id`,`name`,`category`,`description`,`rating`,`legal_name`,`address`,`city`,`country`,`number`,`web`,`email`,`contact_person`,`contact_number`,`contact_email`,`logo`,`status`,`provider_email`) values 
+(9,'dddddd','[\"Clothes\"]','ddddddddddddd',3,'ddddddd','ddddddd','d','Brazil','2342342','ddddddddddd','dd@dd.com','ddddd','1235235','ddd@ddd.com','uploads/shop/download (3).png','active','admin@admin.com'),
+(10,'aaaaaaaa','[\"Leather\"]','aaaaaaaaaaaaaaaaa',4,'aaaaa','aaaaaaaaaa','sdfs','Brazil','1111111','aaaaaa','aa@aa.com','aaaaaa','11111111','aaa@aaa.com','uploads/shop/download (3).jpg','deactive','admin@admin.com'),
+(11,'sssssssssss','[\"Bags\",\"Clothes\",\"Sports\",\"Drinks\"]','ssssssssssss',5,'ssssssss','ssssssssbbbbbbb','sdtwet','Spain','444444','sssss','ss@ss.com','bbssssssssbbbbbbbbbb','11111111','sss@sss.com','uploads/shop/download (2).png','active','admin@admin.com'),
+(12,'shop1','[\"Carpets\",\"Handcraft\"]','asdfasdfasdfasdf',3,'shop1','shop1 address','sdrs','Angola','235','shop1 web','shop1@gmail.com','person1','2362342','person1@gmail.com','uploads/shop/download (3).png','deactive','et@et.com'),
+(14,'shopsugg1','[\"Bags\",\"Furnitures\",\"Clothes\"]','asdfasdfasdfasdfasdfasdf',3,'asdf','address','sdtwet','Angola','123123','asdfasdf','shopsugg1@gmail.com','asdfasdf','235234','shopsugg1person@gmail.com','uploads/shop/Legendary Peterpan.jpg','deactive','et@et.com'),
+(15,'shopsugg3','','asdfqwefasdasdf',4,'asdfasdf','sdfasdfasdf','yuiohty','Chile','qwerqdfasd','asdfasdf','shopsugg3@gmail.com','asdfasdf','23423','shopsugg3person@gmail.com','uploads/shop/Dmitri Maxim.jpg','active','qt@qt.com'),
+(16,'shopsugg4','[\"Drinks\",\"Dish\"]','asdfasdfasdfasdfasdf',2,'asdfasdfas','asdfasdfasdf','sdfs','Angola','235234','asdfadsf','shopsugg4@gmail.com','asdfasdf','232341531','shopsugg4person@gmail.com','uploads/shop/large_4764ad52b10d0bfa3f62e8ff933f9658.jpg','deactive','x@x.com');
+=========================21/11/2018==========================
+==========================update system_settings table and add default_guide_language and default_agency_language fields into this table=========================
+DROP TABLE IF EXISTS `system_settings`;
+
+CREATE TABLE `system_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_tagline` varchar(64) DEFAULT NULL,
+  `site_phone_number` varchar(64) DEFAULT NULL,
+  `site_help_email` varchar(64) DEFAULT NULL,
+  `allow_multi_language` varchar(64) DEFAULT NULL,
+  `default_admin_language` varchar(64) DEFAULT NULL,
+  `default_agency_language` varchar(64) DEFAULT NULL,
+  `default_guide_language` varchar(64) DEFAULT NULL,
+  `default_frontend_language` varchar(64) DEFAULT NULL,
+  `reset_token_lifetime` int(11) DEFAULT NULL,
+  `max_login_restrict_time` int(11) DEFAULT NULL,
+  `max_login_attempts` int(11) DEFAULT NULL,
+  `email_active_language` varchar(64) DEFAULT NULL,
+  `admin_email` varchar(64) DEFAULT NULL,
+  `admin_per_page` int(11) DEFAULT NULL,
+  `site_email` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `system_settings` */
+
+insert  into `system_settings`(`id`,`site_tagline`,`site_phone_number`,`site_help_email`,`allow_multi_language`,`default_admin_language`,`default_agency_language`,`default_guide_language`,`default_frontend_language`,`reset_token_lifetime`,`max_login_restrict_time`,`max_login_attempts`,`email_active_language`,`admin_email`,`admin_per_page`,`site_email`) values 
+(1,'aaaaaaaaaa','1231231','help@gmail.com','no','English','Turkish','Turkish','Turkish',30,3636363,100,'English','admin@admin.com',10,'mysite@gmail.com');

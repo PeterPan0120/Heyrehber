@@ -1,0 +1,85 @@
+.div-shop-logo{
+  margin: 0 auto;
+  text-align: center;
+}
+.div-shop-logo .wrap-custom-shop-logo {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.div-shop-logo .wrap-custom-shop-logo >input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 50px;
+}
+.div-shop-logo .wrap-custom-shop-logo >label {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  background-color: ghostwhite;
+  border-radius: 50px;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  border-style: dotted;
+  border-width: 1px;
+  background-size: 100%;
+}
+.div-shop-logo .wrap-custom-shop-logo label span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #777;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-shop-logo .wrap-custom-shop-logo label .fa {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
+  font-size: 1.5rem;
+  color: lightcoral;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-shop-logo .wrap-custom-shop-logo label:hover {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+.div-shop-logo .wrap-custom-shop-logo label:hover span, .div-shop-logo .wrap-custom-shop-logo label:hover .fa {
+  color: #333;
+}
+.div-shop-logo .wrap-custom-shop-logo label.file-ok {
+  background-size: cover;
+  background-position: center;
+}
+.div-shop-logo .wrap-custom-shop-logo label.file-ok span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #000;
+}
+.div-shop-logo .wrap-custom-shop-logo label.file-ok .fa {
+  display: none;
+}

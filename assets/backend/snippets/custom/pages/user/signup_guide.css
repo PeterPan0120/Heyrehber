@@ -1,0 +1,257 @@
+.div-photo{
+  margin: 0 auto;
+  text-align: center;
+}
+.div-photo .wrap-custom-guide-photo {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+.div-photo .wrap-custom-guide-photo >input[type="file"] {
+  position: absolute;
+  top: 0;z
+  left: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 50px;
+}
+.div-photo .wrap-custom-guide-photo >label {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  background-color: ghostwhite;
+  border-radius: 50px;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  border-style: dotted;
+  border-width: 1px;
+  background-size: 100%;
+}
+.div-photo .wrap-custom-guide-photo label span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #777;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-photo .wrap-custom-guide-photo label .fa {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
+  font-size: 1.5rem;
+  color: lightcoral;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-photo .wrap-custom-guide-photo label:hover {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+.div-photo .wrap-custom-guide-photo label:hover span, .div-photo .wrap-custom-guide-photo label:hover .fa {
+  color: #333;
+}
+.div-photo .wrap-custom-guide-photo label.file-ok {
+  background-size: cover;
+  background-position: center;
+}
+.div-photo .wrap-custom-guide-photo label.file-ok span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #000;
+}
+.div-photo .wrap-custom-guide-photo label.file-ok .fa {
+  display: none;
+}
+/*certificate_front*/
+.div-certificate-front{
+  text-align: center;
+  margin: 0 auto;
+}
+.div-certificate-front .wrap-custom-certificate-front {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+.div-certificate-front .wrap-custom-certificate-front input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 50px!important;
+}
+.div-certificate-front .wrap-custom-certificate-front label {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  background-color: ghostwhite;
+  border-radius: 50px!important;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  border-style: dotted;
+  border-width: 1px;
+  background-size: 100%;
+}
+.div-certificate-front .wrap-custom-certificate-front label span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #777;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-certificate-front .wrap-custom-certificate-front label .fa {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
+  font-size: 1.5rem;
+  color: lightcoral;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-certificate-front .wrap-custom-certificate-front label:hover {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+.div-certificate-front .wrap-custom-certificate-front label:hover span, .div-certificate-front .wrap-custom-certificate-front label:hover .fa {
+  color: #333;
+}
+.div-certificate-front .wrap-custom-certificate-front label.file-ok {
+  background-size: cover;
+  background-position: center;
+}
+.div-certificate-front .wrap-custom-certificate-front label.file-ok span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #000;
+}
+.div-certificate-front .wrap-custom-certificate-front label.file-ok .fa {
+  display: none;
+}
+/*certificate_back*/
+.div-certificate-back{
+  text-align: center;
+  margin: 0 auto;
+}
+.div-certificate-back .wrap-custom-certificate-back {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+.div-certificate-back .wrap-custom-certificate-back input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 50px!important;
+}
+.div-certificate-back .wrap-custom-certificate-back label {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  background-color: ghostwhite;
+  border-radius: 50px!important;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  border-style: dotted;
+  border-width: 1px;
+  background-size: 100%;
+}
+.div-certificate-back .wrap-custom-certificate-back label span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #777;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-certificate-back .wrap-custom-certificate-back label .fa {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
+  font-size: 1.5rem;
+  color: lightcoral;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-certificate-back .wrap-custom-certificate-back label:hover {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+.div-certificate-back .wrap-custom-certificate-back label:hover span, .div-certificate-back .wrap-custom-certificate-back label:hover .fa {
+  color: #333;
+}
+.div-certificate-back .wrap-custom-certificate-back label.file-ok {
+  background-size: cover;
+  background-position: center;
+}
+.div-certificate-back .wrap-custom-certificate-back label.file-ok span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #000;
+}
+.div-certificate-back .wrap-custom-certificate-back label.file-ok .fa {
+  display: none;
+}

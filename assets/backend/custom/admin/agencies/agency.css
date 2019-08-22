@@ -1,0 +1,173 @@
+.div-agency-certificate{
+  margin: 0 auto;
+  text-align: center;
+}
+.div-agency-certificate .wrap-custom-agency-certificate {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.div-agency-certificate .wrap-custom-agency-certificate >input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 20px;
+}
+.div-agency-certificate .wrap-custom-agency-certificate >label {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  background-color: ghostwhite;
+  border-radius: 20px;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  border-style: dotted;
+  border-width: 1px;
+  background-size: 100%;
+}
+.div-agency-certificate .wrap-custom-agency-certificate label span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #777;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-agency-certificate .wrap-custom-agency-certificate label .fa {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
+  font-size: 1.5rem;
+  color: lightcoral;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-agency-certificate .wrap-custom-agency-certificate label:hover {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+.div-agency-certificate .wrap-custom-agency-certificate label:hover span, .div-agency-certificate .wrap-custom-agency-certificate label:hover .fa {
+  color: #333;
+}
+.div-agency-certificate .wrap-custom-agency-certificate label.file-ok {
+  background-size: cover;
+  background-position: center;
+}
+.div-agency-certificate .wrap-custom-agency-certificate label.file-ok span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.div-agency-certificate .wrap-custom-agency-certificate label.file-ok .fa {
+  display: none;
+}
+/*///////////////////////////////////////////////////*/
+.div-agency-photo{
+  margin: 0 auto;
+  text-align: center;
+}
+.div-agency-photo .wrap-custom-agency-photo {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.div-agency-photo .wrap-custom-agency-photo >input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 20px;
+}
+.div-agency-photo .wrap-custom-agency-photo >label {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  background-color: ghostwhite;
+  border-radius: 20px;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  border-style: dotted;
+  border-width: 1px;
+  background-size: 100%;
+}
+.div-agency-photo .wrap-custom-agency-photo label span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #777;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-agency-photo .wrap-custom-agency-photo label .fa {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
+  font-size: 1.5rem;
+  color: lightcoral;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.div-agency-photo .wrap-custom-agency-photo label:hover {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
+}
+.div-agency-photo .wrap-custom-agency-photo label:hover span, .div-agency-photo .wrap-custom-agency-photo label:hover .fa {
+  color: #333;
+}
+.div-agency-photo .wrap-custom-agency-photo label.file-ok {
+  background-size: cover;
+  background-position: center;
+}
+.div-agency-photo .wrap-custom-agency-photo label.file-ok span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.div-agency-photo .wrap-custom-agency-photo label.file-ok .fa {
+  display: none;
+}

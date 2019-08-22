@@ -1,0 +1,13 @@
+html, body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+div.awesomeRating {
+	font-size: 2.5em;
+}
+
+div.awesomeRatingValue {
+	font-size: 1.5em;
+}

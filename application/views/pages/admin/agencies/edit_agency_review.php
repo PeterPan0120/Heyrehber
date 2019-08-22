@@ -1,0 +1,84 @@
+				<div class="m-grid__item m-grid__item--fluid m-wrapper">
+					<div class="m-content">
+						<div class="m-portlet m-portlet--mobile">
+							<div class="m-portlet__head">
+								<div class="m-portlet__head-caption">
+									<div class="m-portlet__head-title">
+										<h3 class="m-portlet__head-text">
+											<?=$label['edit_agency_review']?><small><?=$label['you_can_edit_this_review_here']?></small>
+										</h3>
+									</div>
+								</div>
+							</div>
+							<div class="m-portlet__body">
+								<form class="form-agencies-edit-agency-review m-form m-form--fit m-form--label-align-right">
+									<div class="form-group m-form__group row">
+										<label class="col-form-label col-lg-2 col-sm-12"><?=$label['agency']?></label>
+										<div class="col-lg-5 col-md-9 col-sm-12">
+											<select class="form-control m-bootstrap-select m_selectpicker" name="agency">
+												<?php if(isset($agencies)):
+													foreach($agencies as $agency):?>
+														<?php if($agency->id == $agency_review->agency):?>
+														<option value="<?=$agency->id?>" selected><?= $agency->username;?></option>
+														<?php else:?>
+														<option value="<?=$agency->id?>"><?= $agency->username;?></option>
+														<?php endif;?>
+													<?php endforeach;?>
+												<?php endif;?>
+											</select>
+										</div>
+									</div>
+									<div class="form-group m-form__group row">
+										<input type="hidden" name="id" value="<?=$agency_review->id;?>">
+										<label class="col-form-label col-lg-2 col-sm-12"><?=$label['guide']?></label>
+										<div class="col-lg-5 col-md-9 col-sm-12">
+											<select class="form-control m-bootstrap-select m_selectpicker" name="guide">
+												<?php if(isset($guides)):
+													foreach($guides as $guide):?>
+														<?php if($guide->id == $agency_review->guide):?>
+														<option value="<?=$guide->id?>" selected><?= $guide->username;?></option>
+														<?php else:?>
+														<option value="<?=$guide->id?>"><?= $guide->username;?></option>
+														<?php endif;?>
+													<?php endforeach;?>
+												<?php endif;?>
+											</select>
+										</div>
+									</div>
+									<div class="form-group m-form__group row">
+										<label class="col-form-label col-lg-2 col-sm-12"><?=$label['review']?></label>
+										<div class="col-lg-8 col-md-9 col-sm-12">
+											<textarea class="form-control m-input" name="review" id="exampleTextarea" rows="3" placeholder="<?=$label['please_write_down_review_of_this_agency']?>"><?=$agency_review->review;?></textarea>
+										</div>
+									</div>
+									<div class="form-group m-form__group row">
+										<label class="col-form-label col-lg-2 col-sm-12"><?=$label['rate_this']?></label>
+										<div class="col-lg-8 col-md-9 col-sm-12">
+											<div class="awesomeRating" style="font-size: 2.5em;"></div>
+											<input type="hidden" name="rating" class="awesomeRatingValue" value="<?=$agency_review->rating;?>">
+										</div>
+									</div>
+									<div class="form-group m-form__group row">
+										<label class="col-form-label col-lg-2 col-sm-12"><?=$label['active']?></label>
+										<div class="col-lg-8 col-md-9 col-sm-12">
+											<span class="m-switch m-switch--outline m-switch--icon m-switch--success">
+												<label>
+													<?php if($agency_review->status=="active"): ?>
+													<input type="checkbox" name="status" value="active" checked>
+													<?php else:?>
+													<input type="checkbox" name="status" value="active">
+													<?php endif;?>
+													<input type="checkbox" name="status" value="deactive">
+													<span></span>
+												</label>
+											</span>
+										</div>
+									</div>
+									<div class="m-form__actions">
+										<button type="submit" class="btn btn-primary"><?=$label['save']?></button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>

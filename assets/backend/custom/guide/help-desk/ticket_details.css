@@ -1,0 +1,16 @@
+.btn-add-message{
+	margin: auto 0; 
+	cursor: pointer;
+}
+.btn-add-message >i:hover{
+	color: #3c7bd1;
+}
+div.message-date{
+	margin: auto 0;
+}
+.active{
+	display: block;
+}
+.hide{
+	display: none;
+}
